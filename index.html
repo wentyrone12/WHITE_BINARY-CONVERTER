@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+
+            <h1>Binary Converter 2026</h1>
+
+            <p>
+                Convert text, decimal numbers, and binary data easily.
+            </p>
+        </header>
+
+        <section id="homeSection" class="home-section">
+
+            <div class="home-title">
+                <h2>Choose a Converter</h2>
+                <p  class="tag">Select what you want to convert.</p>
+            </div>
+
+            <div class="cards">
+                
+                <div class="converter-card" id="textToBinaryCard">
+                    <div class="card-icon">T→01</div>
+
+                    <h3>Text → Binary</h3>
+
+                    <p>
+                        Convert letters, words, and sentences
+                        into 8-bit binary values.
+                    </p>
+
+                    <div class="card-arrow">→</div>
+                </div>
+
+                <div class="converter-card" id="decimalBinaryCard">
+                    <div class="card-icon">10↔01</div>
+
+                    <h3>Decimal ↔ Binary</h3>
+
+                    <p>
+                        Convert decimal numbers to binary,
+                        or binary numbers back to decimal.
+                    </p>
+
+                    <div class="card-arrow">→</div>
+                </div>
+
+                <div class="converter-card" id="binaryToTextCard">
+                    <div class="card-icon">01→T</div>
+
+                    <h3>Binary → Text</h3>
+
+                    <p>
+                        Convert 8-bit binary groups back into
+                        readable letters and text.
+                    </p>
+
+                    <div class="card-arrow">→</div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="textToBinarySection" class="converter-section">
+
+            <button class="back-btn" data-back>
+                ← Back to converters
+            </button>
+
+            <div class="converter-box">
+
+                <div class="converter-heading">
+                    <h2>Text → Binary</h2>
+
+                    <p>
+                        Enter text and convert every character
+                        into an 8-bit binary value.
+                    </p>
+                </div>
+
+                <textarea id="textInput" placeholder="Example: Hello World"></textarea>
+
+                <button class="convert-btn" id="textConvertBtn">
+                    Convert to Binary
+                </button>
+
+            </div>
+        </section>
+
+        <section id="decimalBinarySection" class="converter-section">
+
+            <button class="back-btn" data-back>
+                ← Back to converters
+            </button>
+
+            <div class="converter-box">
+
+                <div class="converter-heading">
+                    <h2>Decimal ↔ Binary</h2>
+
+                    <p>
+                        Choose which direction you want to convert.
+                    </p>
+                </div>
+
+                <div class="conversion-options">
+
+                    <!-- DECIMAL → BINARY -->
+
+                    <div class="option-card" id="decimalToBinaryOption">
+                        <div class="option-icon">10 → 01</div>
+
+                        <h3>Decimal → Binary</h3>
+
+                        <p>
+                            Convert a decimal whole number into
+                            binary. Large numbers are supported.
+                        </p>
+                    </div>
+
+
+                    <div class="option-card" id="binaryToDecimalOption">
+                        <div class="option-icon">01 → 10</div>
+
+                        <h3>Binary → Decimal</h3>
+
+                        <p>
+                            Convert a binary number into its
+                            decimal value with a place-value formula.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="decimalToBinarySection" class="converter-section">
+
+            <button class="back-btn" data-back>
+                ← Back to converters
+            </button>
+
+            <div class="converter-box">
+
+                <div class="converter-heading">
+                    <h2>Decimal → Binary</h2>
+
+                    <p>
+                        Enter any positive whole number.
+                        Large numbers are supported.
+                    </p>
+                </div>
+
+                <input id="decimalInput" type="text" inputmode="numeric" placeholder="Example: 10000"
+                    autocomplete="off">
+
+                <button class="convert-btn" id="decimalConvertBtn">
+                    Convert to Binary
+                </button>
+
+            </div>
+        </section>
+
+        <section id="binaryToDecimalSection" class="converter-section">
+
+            <button class="back-btn" data-back>
+                ← Back to converters
+            </button>
+
+            <div class="converter-box">
+
+                <div class="converter-heading">
+                    <h2>Binary → Decimal</h2>
+
+                    <p>
+                        Enter a binary number using only 0 and 1.
+                    </p>
+                </div>
+
+                <input id="binaryDecimalInput" type="text" placeholder="Example: 10011100010000" autocomplete="off">
+
+                <button class="convert-btn" id="binaryDecimalConvertBtn">
+                    Convert to Decimal
+                </button>
+
+            </div>
+        </section>
+
+        <section id="binaryToTextSection" class="converter-section">
+
+            <button class="back-btn" data-back>
+                ← Back to converters
+            </button>
+
+            <div class="converter-box">
+
+                <div class="converter-heading">
+                    <h2>Binary → Text</h2>
+
+                    <p>
+                        Enter binary in 8-bit groups separated
+                        by spaces.
+                    </p>
+                </div>
+
+                <textarea id="binaryTextInput"
+                    placeholder="Example: 01001000 01100101 01101100 01101100 01101111"></textarea>
+
+                <button class="convert-btn" id="binaryTextConvertBtn">
+                    Convert to Text
+                </button>
+
+            </div>
+        </section>
+
+    </div>
+
+    <div class="overlay" id="resultOverlay">
+
+        <div class="result-popup">
+
+            <button class="close-btn" id="closeResultBtn">
+                ×
+            </button>
+
+            <div class="result-header">
+
+                <h2 id="resultTitle">
+                    Conversion Result
+                </h2>
+
+                <p id="resultSubtitle">
+                    Your converted result is shown below.
+                </p>
+
+            </div>
+
+
+            <div class="output-label">
+                Output
+            </div>
+
+            <div class="output-box" id="resultOutput"></div>
+
+
+            <button class="copy-btn" id="copyBtn">
+                Copy Result
+            </button>
+
+            <div class="result-count" id="resultCount"></div>
+
+            <div class="breakdown" id="numberBreakdown" style="display:none;">
+
+                <div class="breakdown-title">
+                    Binary place-value breakdown
+                </div>
+
+                <div class="bit-row" id="bitRow"></div>
+
+                <div class="formula" id="formula"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="nametag">Made by <a style="color: red;">Wendell Tyrone Jimenez</a> <br> Software Engineer | Network Engineer | Cybersecurity Engineer</div>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
